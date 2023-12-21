@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace SD.Tools
 {
-    [CustomEditor(typeof(LayoutGroup3D))]
-    public class LayoutGroup3DEditor : Editor
+    [CustomEditor(typeof(LayoutGroups3D))]
+    public class LayoutGroups3DEditor : Editor
     {
         SerializedProperty startPositionOffsetProp;
 
@@ -73,10 +73,10 @@ namespace SD.Tools
 
             EditorGUILayout.PropertyField(alignmentTypeProp, new GUIContent("Alignment Type"));
 
-            LayoutGroup3D.AlignType alignType = (LayoutGroup3D.AlignType)alignmentTypeProp.enumValueIndex;
-            LayoutGroup3D.Axis linearAxis = (LayoutGroup3D.Axis)linearAxisProp.enumValueIndex;
+            LayoutGroups3D.AlignType alignType = (LayoutGroups3D.AlignType)alignmentTypeProp.enumValueIndex;
+            LayoutGroups3D.Axis linearAxis = (LayoutGroups3D.Axis)linearAxisProp.enumValueIndex;
 
-            if (alignType == LayoutGroup3D.AlignType.Radial)
+            if (alignType == LayoutGroups3D.AlignType.Radial)
             {
                 EditorGUILayout.PropertyField(radialAxisProp, new GUIContent("Radial Axis"));
                 EditorGUILayout.PropertyField(radialRadiusProp, new GUIContent("Radial Radius"));
@@ -90,19 +90,19 @@ namespace SD.Tools
                     EditorGUILayout.PropertyField(debugColorProp, new GUIContent("Debug Color"));
                 }
             }
-            else if (alignType == LayoutGroup3D.AlignType.Linear)
+            else if (alignType == LayoutGroups3D.AlignType.Linear)
             {
                 EditorGUILayout.PropertyField(startPositionOffsetProp, new GUIContent("Start Position Offset"));
                 EditorGUILayout.PropertyField(linearAxisProp, new GUIContent("Linear Axis"));
                 switch (linearAxis)
                 {
-                    case LayoutGroup3D.Axis.X:
+                    case LayoutGroups3D.Axis.X:
                         EditorGUILayout.PropertyField(xAxisDirProp, new GUIContent("X Axis Direction"));
                         break;
-                    case LayoutGroup3D.Axis.Y:
+                    case LayoutGroups3D.Axis.Y:
                         EditorGUILayout.PropertyField(yAxisDirProp, new GUIContent("Y Axis Direction"));
                         break;
-                    case LayoutGroup3D.Axis.Z:
+                    case LayoutGroups3D.Axis.Z:
                         EditorGUILayout.PropertyField(zAxisDirProp, new GUIContent("Z Axis Direction"));
                         break;
                     default: break;
@@ -110,7 +110,7 @@ namespace SD.Tools
 
                 EditorGUILayout.PropertyField(spacingProp, new GUIContent("Spacing"));
             }
-            else if (alignType == LayoutGroup3D.AlignType.Grid)
+            else if (alignType == LayoutGroups3D.AlignType.Grid)
             {
                 EditorGUILayout.PropertyField(startPositionOffsetProp, new GUIContent("Start Position Offset"));
                 EditorGUILayout.PropertyField(primaryGridAxisProp, new GUIContent("Primary Grid Axis"));
@@ -123,7 +123,7 @@ namespace SD.Tools
                 if (!useSameSpacingValue)
                     EditorGUILayout.PropertyField(spacingOtherAxisProp, new GUIContent("Spacing Other Axis"));
             }
-            else if (alignType == LayoutGroup3D.AlignType.Euclidean)
+            else if (alignType == LayoutGroups3D.AlignType.Euclidean)
             {
                 EditorGUILayout.PropertyField(startPositionOffsetProp, new GUIContent("Start Position Offset"));
 
@@ -146,7 +146,7 @@ namespace SD.Tools
 
             serializedObject.ApplyModifiedProperties();
 
-            LayoutGroup3D aligner = (LayoutGroup3D)target;
+            LayoutGroups3D aligner = (LayoutGroups3D)target;
             aligner.Align();
         }
     }

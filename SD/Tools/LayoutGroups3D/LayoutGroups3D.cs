@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace SD.Tools
 {
-    public class LayoutGroup3D : MonoBehaviour
+    public class LayoutGroups3D : MonoBehaviour
     {
         #region ENUMS
 
