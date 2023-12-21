@@ -3,6 +3,8 @@
 
  You can group 3d objects like canvas groups.
 
+ [Download as Unitypackage](https://github.com/salihdeg/UnitySDTools/blob/main/SD/Tools/LayoutGroups3D/SD.Tools.LayoutGroups3D.unitypackage "download")
+
  ### Linear Layout Groups
  ![linearGroupImage](https://raw.githubusercontent.com/salihdeg/gitHubImages/master/UnitySDTools/LinearGroup.png)
 
